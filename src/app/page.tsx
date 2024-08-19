@@ -13,7 +13,6 @@ export default async function Page({
   return (
     <div>
       <h1>devfinder</h1>
-
       <Search placeholder="Search..." />
       <pre>{JSON.stringify(user, null, 2)}</pre>
       <Account />
