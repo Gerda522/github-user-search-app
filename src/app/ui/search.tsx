@@ -14,6 +14,8 @@ export default function Search({
   const pathname = usePathname();
   const { replace } = useRouter();
 
+  const query = searchParams.get("query")?.toString();
+
   const handleSearch = useDebouncedCallback((term) => {
     console.log(`Searching... ${term}`);
     const params = new URLSearchParams(searchParams);
@@ -52,7 +54,9 @@ export default function Search({
             />
           </div>
 
-          {message && <div className="text-red-600 mt-2">{message}</div>}
+          {message && query && (
+            <div className="text-red-600 mt-2">{message}</div>
+          )}
         </div>
       </div>
     </div>
