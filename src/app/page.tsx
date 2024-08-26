@@ -1,6 +1,7 @@
 import Search from "./ui/search";
 import Profile from "./ui/profile";
 import { getUser } from "./lib/actions";
+import ModeToggle from "./ui/modetoggle";
 
 export default async function Page({
   searchParams,
@@ -11,8 +12,21 @@ export default async function Page({
   const message = user?.message === "Not Found" ? "No results" : undefined;
 
   return (
-    <div>
-      <Search placeholder="Search..." message={message} />
+    <div className="mt-16 p-4 md:p-0">
+      <div className="flex flex-col md:flex-row justify-center items-center">
+        <div className=" w-full md:w-2/5">
+          <div>
+            <div className="flex flex-row items-center justify-between">
+              <p className="font-bold text-2xl py-4 font-spaceMono">
+                devfinder
+              </p>
+              <ModeToggle />
+            </div>
+            <Search placeholder="Search..." message={message} />
+          </div>
+        </div>
+      </div>
+
       {/* The Profile component is rendered with the user data. */}
       {user && !user.message ? (
         <Profile

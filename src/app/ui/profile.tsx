@@ -36,8 +36,8 @@ export default function Profile({
   company,
 }: ProfileProps) {
   return (
-    <div className="flex flex-row justify-center">
-      <div className="flex flex-row gap-16 justify-center w-2/5 mt-6 p-12 bg-white rounded-xl">
+    <div className="flex flex-col md:flex-row justify-center">
+      <div className="flex flex-col items-center md:items-start md:flex-row gap-16 justify-center w-full md:w-2/5 mt-6 p-12 dark:bg-customDarkBlue bg-white rounded-xl">
         <div className="">
           <Image
             className="rounded-full"
@@ -47,13 +47,17 @@ export default function Profile({
             height={100}
           />
         </div>
-        <div className="">
+        <div className="font-spaceMono">
           <div className="flex flex-row justify-between gap-28 items-center">
-            <h2 className="font-medium text-4xl">{username}</h2>
-            <p>Joined: {new Date(createdAt).toLocaleDateString()}</p>
+            <h2 className="font-bold text-4xl">{username}</h2>
+            <p className="text-customGray dark:text-white">
+              Joined: {new Date(createdAt).toLocaleDateString()}
+            </p>
           </div>
-          <p className="py-4">Bio: {displayValue(bio)}</p>
-          <div className="bg-customBlue flex flex-row justify-between p-6 rounded-xl">
+          <p className="py-4 text-customGray dark:text-white">
+            Bio: {displayValue(bio)}
+          </p>
+          <div className="bg-customBlue dark:bg-customDark flex flex-row justify-between p-6 rounded-xl">
             <div className="flex flex-col">
               <p>Public</p>
               <p className="font-bold text-2xl">{displayValue(publicRepos)}</p>
@@ -67,9 +71,9 @@ export default function Profile({
               <p className="font-bold text-2xl">{displayValue(following)}</p>
             </div>
           </div>
-          <div className="flex flex-row gap-12 py-6">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-12 py-6">
             <div className="flex flex-col gap-4">
-              <p className="flex flex-row gap-2">
+              <p className="flex flex-row gap-2 items-center text-customGray dark:text-white">
                 <img
                   src="/icon-location.svg"
                   alt=""
@@ -78,7 +82,7 @@ export default function Profile({
                 Location: {displayValue(location)}
               </p>
 
-              <p className="flex flex-row gap-2">
+              <p className="flex flex-row gap-2 items-center text-customGray dark:text-white">
                 <img
                   src="/icon-twitter.svg"
                   alt=""
@@ -88,7 +92,7 @@ export default function Profile({
               </p>
             </div>
             <div className="flex flex-col gap-4">
-              <p className="flex flex-row gap-2">
+              <p className="flex flex-row gap-2 items-center text-customGray dark:text-white">
                 <img
                   src="/icon-website.svg"
                   alt=""
@@ -97,7 +101,7 @@ export default function Profile({
                 Blog: {displayValue(blog)}
               </p>
 
-              <p className="flex flex-row gap-2">
+              <p className="flex flex-row gap-2 items-center text-customGray dark:text-white">
                 <img
                   src="/icon-company.svg"
                   alt=""

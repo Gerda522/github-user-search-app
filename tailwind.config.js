@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -17,6 +17,17 @@ module.exports = {
       },
     },
     extend: {
+      colors: {
+        customButtonBlue: "#0079FF",
+        customBlue: "#F6F8FF",
+        customGray: "#697C9A",
+        customDark: "#141D2F",
+        customDarkBlue: "#1E2A47",
+      },
+      fontFamily: {
+        spaceMono: ['"Space Mono"', "monospace"],
+      },
+
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -34,4 +45,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
